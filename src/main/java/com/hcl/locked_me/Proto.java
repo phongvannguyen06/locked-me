@@ -41,5 +41,9 @@ public class Proto {
          
         files.close();
 	}
+	
+	public static checkIfFolder() {
+		
+	}
 
 }
