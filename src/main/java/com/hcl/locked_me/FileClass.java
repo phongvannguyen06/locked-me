@@ -3,21 +3,16 @@ package com.hcl.locked_me;
 import java.nio.file.Path;
 import java.nio.file.attribute.FileTime;
 
-public class File {
+public class FileClass {
 
 	private Path path;
 	private String name;
-	private FileTime fileTime;
+	private FileTime creationTime;
 	private int size;
 
-	public File(Path path, String name, FileTime fileTime, int size) {
+	public FileClass(Path path, String name, FileTime creationTime, int size) {
 		this.path = path;
-		this.fileTime = fileTime;
-		this.name = name;
-		this.size = size;
-	}
-	
-	public File(String name, int size) {
+		this.creationTime = creationTime;
 		this.name = name;
 		this.size = size;
 	}
@@ -31,7 +26,7 @@ public class File {
 	}
 
 	public FileTime getFileTime() {
-		return fileTime;
+		return creationTime;
 	}
 
 	public int getSize() {

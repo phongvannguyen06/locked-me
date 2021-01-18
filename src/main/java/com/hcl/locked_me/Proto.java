@@ -11,39 +11,44 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Proto {
-	
-
 
 	public static void main(String[] args) throws IOException {
-//		try (Stream<Path> walk = Files.list(Paths.get("D:\\crystal-thai\\dist\\crystal-thai"))) {
-//
-//			List<String> result = walk.filter(Files::isRegularFile).map(x -> x.toString()).collect(Collectors.toList());
-//
-//			result.forEach(System.out::println);
-//
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-		
-		Scanner scanner = new Scanner(System.in);
-		String path = scanner.nextLine();
-		
-		// "C:/Program Files/Bitdefender/Bitdefender VPN"
-        Stream<Path> files = Files.list(Paths.get(path));
-        
-        List<String> result = files.map(x -> x.getFileName().toString()).collect(Collectors.toList());
-        Collections.sort(result, String.CASE_INSENSITIVE_ORDER.reversed());
-        for (String name : result) {
-        	System.out.println(name);
-        }
-        
-//        files.forEach(System.out::println);
-         
-        files.close();
+////		try (Stream<Path> walk = Files.list(Paths.get("D:\\crystal-thai\\dist\\crystal-thai"))) {
+////
+////			List<String> result = walk.filter(Files::isRegularFile).map(x -> x.toString()).collect(Collectors.toList());
+////
+////			result.forEach(System.out::println);
+////
+////		} catch (IOException e) {
+////			e.printStackTrace();
+////		}
+//		
+//		Scanner scanner = new Scanner(System.in);
+//		String path = scanner.nextLine();
+//		
+//		// "C:/Program Files/Bitdefender/Bitdefender VPN"
+//        Stream<Path> files = Files.list(Paths.get(path));
+//        
+//        List<String> result = files.map(x -> x.getFileName().toString()).collect(Collectors.toList());
+//        Collections.sort(result, String.CASE_INSENSITIVE_ORDER.reversed());
+//        for (String name : result) {
+//        	System.out.println(name);
+//        }
+//        
+////        files.forEach(System.out::println);
+//         
+//        files.close();
+//	}
+//	
+//	public static checkIfFolder() {
+//		
 	}
 	
-	public static checkIfFolder() {
-		
+	static void addFeature() throws IOException {
+//		Stream<Path> files = Files.list(Paths.get(path));
+//		List<String> fileNames = files.map(x -> x.getFileName().toString()).collect(Collectors.toList());
+//		Collections.sort(fileNames, String.CASE_INSENSITIVE_ORDER);
+//		fileNames.forEach(x -> System.out.println(x));
 	}
 
 }
