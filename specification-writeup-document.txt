@@ -24,6 +24,7 @@ Product Capabilities:
 	3. The program catches all errors and invalid inputs to make sure it doesn't crash if an error is encountered or an invalid input is entered.
 	4. The user can look up how to use each command by viewing the manual.
 	5. The program is case senstive for commands and insenstive for other inputs.
+	6. Watch for changes to files' properties outside of the pgogram. (e.g. deleting a file outside of the application)
 -------------------------------------------
 Appearance: command line
 -------------------------------------------
