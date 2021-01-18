@@ -1,0 +1,37 @@
+Specification Document
+App Name: LockedMe
+Developer Name: Phong Van Nguyen
+
+***Sprint is in README.md file
+-------------------------------------------
+5 Classes
+	***FileClass - has properties of a file (e.g. name, date created, size) and getters
+	***FileManager 
+		-manages instances of FileClass, 
+		-chooses the right operation type (retrieving files, business operations (e.g. add, delete, search, main)
+		-validates user-entered path input
+	***ListAllFileOperation
+		-lists all files by (names, date created, size, or reversed)
+	***BusinessOperation
+		-add/delete/search for a file
+		-main -> go back to main
+	***App
+		-Main/Driver class of the program
+-------------------------------------------
+Product Capabilities:
+	1. The user can retrieve the files names in either an ascending or descending order sorted by names, date created, and size.
+	2. The user can add, delete, or search for a file within the chosen directory.
+	3. The program catches all errors and invalid inputs to make sure it doesn't crash if an error is encountered or an invalid input is entered.
+	4. The user can look up how to use each command by viewing the manual.
+	5. The program is case senstive for commands and insenstive for other inputs.
+-------------------------------------------
+Appearance: command line
+-------------------------------------------
+User Interactions:
+	-Enter any command (e.g. gfn -datecreated, help gfn, etc.) to execute the command.
+-------------------------------------------
+Java Concepts Being Used:
+	-Variables, data types, operators, type casting, control statement, class, objects, acess specifiers, this, static
+	-Exceptions, NIO, IO, Collections (List is used), Sorting, Streams, Lambdas
+
+	
