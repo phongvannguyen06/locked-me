@@ -11,6 +11,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
 
+/**
+ * manage the FileClass objects
+ * 
+ * @author Phong Van Nguyen
+ *
+ */
 public class FileManager {
 
 	private List<FileClass> files;
@@ -18,11 +24,24 @@ public class FileManager {
 	private ListAllFileOperation listOperation;
 	private BusinessOperation businessOperation;
 
+	/**
+	 * A constructor that sets the path to the chosen directory and hold the files'
+	 * properties.
+	 * 
+	 * @param path
+	 * @throws IOException
+	 */
 	public FileManager(String path) throws IOException {
 		this.path = path;
 		populateTheList();
 	}
 
+	/**
+	 * A method to make sure the user-entered path is valid
+	 * 
+	 * @param path
+	 * @return boolean
+	 */
 	public static boolean isPathValid(String path) {
 		try {
 			Path pathtoDirectory = Paths.get(path);
@@ -37,6 +56,12 @@ public class FileManager {
 		return true;
 	}
 
+	/**
+	 * It gets all the files from the user-entered path and populates the variable
+	 * files with the properties specified in the FileClass.java
+	 * 
+	 * @throws IOException
+	 */
 	private void populateTheList() throws IOException {
 		files = new ArrayList<FileClass>();
 		Stream<Path> fileStreamPath = Files.list(Paths.get(this.path));
@@ -47,24 +72,33 @@ public class FileManager {
 			BasicFileAttributes bfa = Files.readAttributes(path, BasicFileAttributes.class);
 
 			String name = path.getFileName().toString();
-			int size = (int) (bfa.size() / 1000);
+			int size = (int) (bfa.size() / 1000); // in KB
 
 			files.add(new FileClass(path, name, bfa.creationTime(), size));
 		}
 
 		fileStreamPath.close();
 	}
-	
+
+	/**
+	 * shows the current path
+	 */
 	public void showCurrentPath() {
 		System.out.println("Current Path:");
 		System.out.printf("%s\n", path);
 	}
 
-	public void chooseAnOperation(String expression) throws IOException {
+	/**
+	 * Choose the correct operation with the user-entered input
+	 * 
+	 * @param expression e.g. gfn -datecreated
+	 * @throws IOException
+	 */
+	public void chooseAnOperationType(String expression) throws IOException {
 		String operationType = expression.split(" ")[0];
 		switch (operationType) {
 		case "gfn":
-			chooseAListingMethod(expression);
+			chooseAListingOperation(expression);
 			break;
 		case "vmo":
 			int wordsNum = expression.split(" ").length;
@@ -87,14 +121,14 @@ public class FileManager {
 		}
 	}
 
-	private void chooseAListingMethod(String listMethodName) throws IOException {
+	private void chooseAListingOperation(String listMethodName) throws IOException {
 		populateTheList();
-		
-		this.listOperation = new ListAllFileOperation(this.files);
+
+		listOperation = new ListAllFileOperation(this.files);
 
 		System.out.println("\nName --- Date-Created --- Size");
 		System.out.println("-------------------------------");
-		
+
 		switch (listMethodName) {
 		case "gfn":
 			listOperation.listFileByName();
@@ -172,7 +206,7 @@ public class FileManager {
 	}
 
 	private void showBusinessOperationsMenu() {
-		System.out.println("\nPossible file operations");
+		System.out.println("\nPossible business operations");
 		System.out.println("1. enter \"add\" to create a new file");
 		System.out.println("2. enter \"delete\" to remove a file");
 		System.out.println("3. enter \"search\" to search for a file");

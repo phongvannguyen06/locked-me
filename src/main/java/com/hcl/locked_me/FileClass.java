@@ -3,6 +3,11 @@ package com.hcl.locked_me;
 import java.nio.file.Path;
 import java.nio.file.attribute.FileTime;
 
+/**
+ * A class that mimics an actual file object.
+ * @author Phong Van Nguyen
+ *
+ */
 public class FileClass {
 
 	private Path path;

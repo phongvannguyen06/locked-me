@@ -7,11 +7,10 @@ import java.util.Scanner;
 
 public class App {
 
-	static Scanner scanner = new Scanner(System.in);
-
 	public static void main(String[] args) throws IOException {
-
+		
 		startApp();
+		
 	}
 
 	public static void startApp() throws IOException {
@@ -20,23 +19,29 @@ public class App {
 		System.out.println("	Developer: Phong Van Nguyen");
 		System.out.println("*******************************************************");
 
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter a path to directory or press [Enter] to choose the current directory: ");
-		String pathInput;
-		while (!FileManager.isPathValid(pathInput = scanner.nextLine().replace("\\", File.separator)));
+		String path;
+		// makes sure the String path is valid
+		while (!FileManager.isPathValid(path = scanner.nextLine().replace("\\", File.separator)));
 
-		if (pathInput.isEmpty()) {
-			pathInput = Paths.get("").toAbsolutePath().toString();
+		// if no path is given, then use the current directory
+		if (path.isEmpty()) {
+			path = Paths.get("").toAbsolutePath().toString();
 		}
 
-		FileManager fm = new FileManager(pathInput);
+		FileManager fileManager = new FileManager(path);
 
-		fm.showCurrentPath();
-		fm.showMainMenu();
+		fileManager.showCurrentPath();
+		fileManager.showMainMenu();
 
+		// keep running the application, until the user enter "exit"
 		String commandExpression = "";
 		while (!(commandExpression = scanner.nextLine()).equals("exit")) {
-			fm.chooseAnOperation(commandExpression);
+			fileManager.chooseAnOperationType(commandExpression);
 		}
+		
+		scanner.close();
 		System.out.println("The program has been closed");
 		System.out.println("Thank you for using it!");
 	}

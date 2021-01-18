@@ -8,6 +8,11 @@ import java.time.format.DateTimeFormatter;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * list all the files in the current directory with options
+ * @author Phong Van Nguyen
+ *
+ */
 public class ListAllFileOperation {
 
 	private List<FileClass> files;

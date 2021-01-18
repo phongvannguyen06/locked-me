@@ -9,6 +9,11 @@ import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
 import java.util.List;
 
+/**
+ * add, delete, or search for a file
+ * @author Phong Van Nguyen
+ *
+ */
 public class BusinessOperation {
 
 	private List<FileClass> files;
