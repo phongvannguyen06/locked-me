@@ -11,6 +11,7 @@ import java.util.List;
 
 /**
  * add, delete, or search for a file
+ * 
  * @author Phong Van Nguyen
  *
  */
@@ -23,7 +24,7 @@ public class BusinessOperation {
 		this.files = files;
 		this.path = path;
 	}
-	
+
 	public void addFile(String name) {
 		try {
 			Files.createFile(Paths.get(path, name));
@@ -36,7 +37,7 @@ public class BusinessOperation {
 			System.out.printf("\n[%s] already exists! Type \"help vmo\" to view the manual\n", name);
 		} catch (IOException e) {
 			System.out.println("Invalid input. Type \"help vmo\" to view the manual");
-		} 
+		}
 	}
 
 	public void deleteFile(String name) {
@@ -56,7 +57,7 @@ public class BusinessOperation {
 
 	public void searchFile(String name) {
 		for (FileClass file : files) {
-			if (file.getName().equals(name)) {
+			if (name.equalsIgnoreCase(file.getName())) {
 				System.out.printf("\nFile found successfully [%s]!\n", name);
 				return;
 			}

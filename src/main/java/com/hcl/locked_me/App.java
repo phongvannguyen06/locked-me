@@ -29,7 +29,7 @@ public class App {
 		if (path.isEmpty()) {
 			path = Paths.get("").toAbsolutePath().toString();
 		}
-
+		
 		FileManager fileManager = new FileManager(path);
 
 		fileManager.showCurrentPath();
