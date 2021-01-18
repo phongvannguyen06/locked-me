@@ -34,5 +34,21 @@ User Interactions:
 Java Concepts Being Used:
 	-Variables, data types, operators, type casting, control statement, class, objects, acess specifiers, this, static
 	-Exceptions, NIO, IO, Collections (List is used), Sorting, Streams, Lambdas
-
+-------------------------------------------
+Github Repo:
+	https://github.com/phongnguyenhcl/locked-me
+-------------------------------------------
+Enhancing the Project:
+	1. implement the WatchService API instead of retrieving everything every time
+	2. a GUI
+	3. more intuitive commands like piping, search for files with user-specified content
+	4. moving files
+	5. copying files
+--------------------------------------------
+Unique Selling Points (USPs)
+	1. option to choose a custom path or the current path
+	2. case insensitive for all inputs
+	3. error-checking, account for all types of user-inputs
+	4. Application is well-written with streams which make it Readable/Maintainable for future developers
+	5. very intuitive, show all properties a files (name, date created, size)
 	
